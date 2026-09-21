@@ -1,17 +1,43 @@
-idade = int(input("Digite a idade do cliente: "))
+programa
+{
+    funcao inicio()
+    {
+        // Declara as variáveis que serão utilizadas
+        inteiro idade
+        real renda
+        cadeia categoria
 
-renda = float(input("Digite a renda do cliente: "))
+        // Solicita a idade do cliente
+        escreva("Digite a idade do cliente: ")
+        leia(idade)
 
-if renda < 2000:
-    categoria = "Bronze"
+        // Solicita a renda do cliente
+        escreva("Digite a renda do cliente: ")
+        leia(renda)
 
-elif renda < 5000:
-    categoria = "Prata"
+        // Verifica a renda e define a categoria do cliente
+        se (renda < 2000)
+        {
+            // Renda menor que 2000: categoria Bronze
+            categoria = "Bronze"
+        }
+        senao se (renda < 5000)
+        {
+            // Renda entre 2000 e 4999,99: categoria Prata
+            categoria = "Prata"
+        }
+        senao se (renda < 10000)
+        {
+            // Renda entre 5000 e 9999,99: categoria Ouro
+            categoria = "Ouro"
+        }
+        senao
+        {
+            // Renda igual ou maior que 10000: categoria Diamante
+            categoria = "Diamante"
+        }
 
-elif renda < 10000:
-    categoria = "Ouro"
-
-else:
-    categoria = "Diamante"
-
-print(f"Cliente classificado como: {categoria}")
+        // Exibe a categoria definida para o cliente
+        escreva("Cliente classificado como: ", categoria)
+    }
+}
