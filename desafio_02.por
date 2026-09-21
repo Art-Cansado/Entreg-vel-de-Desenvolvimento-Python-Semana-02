@@ -1,34 +1,69 @@
-print("=== MENU DE OPERAÇÕES ===")
-print("1 - Soma")
-print("2 - Subtração")
-print("3 - Multiplicação")
-print("4 - Divisão")
+programa
+{
+    funcao inicio()
+    {
+        // Declara as variáveis utilizadas na calculadora
+        real primeiro_numero
+        real segundo_numero
+        real resultado
+        inteiro opcao
 
-primeiro_numero = float(input("Digite o primeiro número: "))
-segundo_numero = float(input("Digite o segundo número: "))
+        // Exibe o menu de operações
+        escreva("=== MENU DE OPERAÇÕES ===\n")
+        escreva("1 - Soma\n")
+        escreva("2 - Subtração\n")
+        escreva("3 - Multiplicação\n")
+        escreva("4 - Divisão\n")
 
-opcao = int(input("Escolha uma operação: "))
+        // Recebe os dois números do usuário
+        escreva("Digite o primeiro número: ")
+        leia(primeiro_numero)
 
-match opcao:
+        escreva("Digite o segundo número: ")
+        leia(segundo_numero)
 
-    case 1:
-        resultado = primeiro_numero + segundo_numero
-        print(f"Resultado: {resultado}")
+        // Recebe a operação escolhida
+        escreva("Escolha uma operação: ")
+        leia(opcao)
 
-    case 2:
-        resultado = primeiro_numero - segundo_numero
-        print(f"Resultado: {resultado}")
+        // Verifica qual operação foi escolhida
+        escolha (opcao)
+        {
+            caso 1:
+                // Realiza a soma
+                resultado = primeiro_numero + segundo_numero
+                escreva("Resultado: ", resultado)
+                pare
 
-    case 3:
-        resultado = primeiro_numero * segundo_numero
-        print(f"Resultado: {resultado}")
+            caso 2:
+                // Realiza a subtração
+                resultado = primeiro_numero - segundo_numero
+                escreva("Resultado: ", resultado)
+                pare
 
-    case 4:
-        if segundo_numero != 0:
-            resultado = primeiro_numero / segundo_numero
-            print(f"Resultado: {resultado}")
-        else:
-            print("Não é possível dividir por zero.")
+            caso 3:
+                // Realiza a multiplicação
+                resultado = primeiro_numero * segundo_numero
+                escreva("Resultado: ", resultado)
+                pare
 
-    case _:
-        print(f"Opção inválida: {opcao}")
+            caso 4:
+                // Antes de dividir, verifica se o segundo número é diferente de zero
+                se (segundo_numero != 0)
+                {
+                    resultado = primeiro_numero / segundo_numero
+                    escreva("Resultado: ", resultado)
+                }
+                senao
+                {
+                    // Evita uma divisão por zero
+                    escreva("Não é possível dividir por zero.")
+                }
+                pare
+
+            caso contrario:
+                // Executado quando o usuário escolhe uma opção inexistente
+                escreva("Opção inválida: ", opcao)
+        }
+    }
+}
