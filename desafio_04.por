@@ -1,22 +1,51 @@
-senha_correta = "1234"
-tentativas = 0
-acesso_liberado = False
+programa
+{
+    funcao inicio()
+    {
+        // Define a senha correta do sistema
+        cadeia senha_correta = "1234"
 
-while tentativas < 3:
+        // Variável que armazenará a senha digitada
+        cadeia senha_digitada
 
-    senha_digitada = input("Digite a senha: ")
+        // Começa o número de tentativas em zero
+        inteiro tentativas = 0
 
-    tentativas += 1
+        // Indica se o usuário conseguiu acessar o sistema
+        logico acesso_liberado = falso
 
-    if senha_digitada == senha_correta:
+        // Permite no máximo 3 tentativas
+        enquanto (tentativas < 3)
+        {
+            // Solicita a senha ao usuário
+            escreva("Digite a senha: ")
+            leia(senha_digitada)
 
-        acesso_liberado = True
+            // Adiciona uma tentativa
+            tentativas = tentativas + 1
 
-        print(f"Acesso liberado na tentativa {tentativas}.")
+            // Verifica se a senha digitada está correta
+            se (senha_digitada == senha_correta)
+            {
+                // Libera o acesso
+                acesso_liberado = verdadeiro
 
-        break
+                // Informa em qual tentativa o acesso foi liberado
+                escreva("Acesso liberado na tentativa ", tentativas, ".")
 
-    print(f"Senha incorreta. Tentativa {tentativas} de 3.")
+                // Encerra o laço porque a senha está correta
+                pare
+            }
 
-if not acesso_liberado:
-    print(f"Acesso bloqueado após {tentativas} tentativas.")
+            // Informa que a senha está incorreta
+            escreva("Senha incorreta. Tentativa ", tentativas, " de 3.\n")
+        }
+
+        // Se o acesso não foi liberado depois das 3 tentativas,
+        // o sistema informa que o acesso foi bloqueado
+        se (acesso_liberado == falso)
+        {
+            escreva("Acesso bloqueado após ", tentativas, " tentativas.")
+        }
+    }
+}
